@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+ table{
+    width: 50%;
+    
+    }
+.satu{
+    width: 50%;
+    text-align: left;
+    
+}
+.beda{
+    width: 5%;
+    
+    
+}
+form{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 100px;
+    margin-left: 550px;
+    
+    
+}
+Th{
+    text-align: left;
+    background-color: skyblue;
+    border: none;
+    
+    
+}
+
+.ketengah{
+    text-align: center;
+}
+body {
+    background-color: skyblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+    
+}
+table {
+    box-shadow: 6px 6px 5px 10px #666666;
+    width: 40%;
+    padding:10px;
+    margin-bottom: 5px;
+     border-radius: 10px;
+
+}
+
+.background{
+          max-width: 550px;
+          width: 100%;
+          background: lightyellow;
+          margin: 20px auto;
+          
+        }
+
+input[type=submit] {
+          font-size: 20px;
+          padding: 10px 20px;
+          margin: 10px;
+          border-radius: 10px;
+          border: none;
+          background-color: rgb(60, 0, 255);
+          color: white;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="halamandatasiswa.html" method="post">
+        
+
+        <table border="1">
+        <tr>
+            <Th  class ="ketengah" colspan="3">BIODATA PENDUDUK</Th>
+        </tr>
+        <tr>
+
+            <Th class="satu">Nik</Th>
+            <Th class="beda"> :</Th>
+            <Th><input type="number" id="nis" name="nis"> </Th>
+            
+        </tr>
+        <tr>
+            <Th class="satu">Nama</Th>
+            <Th class="beda"> :</Th>
+            <Th> <input type="text" id="satu" name="nama"></Th>
+        
+        <tr>
+            <Th class="satu">Kabupaten/kota</Th>
+            <Th class="beda"> :</Th>
+            <Th> <select name="kota/kab" id="kotakab" onchange="pilihkotakab();">
+                <option value="."> </option>
+                <option value="kota" id="kotabandung">kota bandung</option>
+                <option value="kab"  id="kabubandung">kabupaten bandung</option>
+              </select></Th>    
+        </tr>
+        <!--===================================java script=================================== -->
+
+        <script>
+            function pilihkotakab(){
+
+            
+            var kotbandung = document.getElementById("kotabandung").selected;
+            var kabubandung = document.getElementById("kabubandung").selected;
+
+            var keca1 = document.getElementById("keca1").selected;
+            var keca2 = document.getElementById("keca2").selected;
+           
+            if (kotbandung == true) {
+                kec1 = "kiaracondong";
+                kec2 = "arcamanik";
+
+                if(keca1 == true){
+                kel1 = "sukapura";
+                kel2 = "cidurian";
+                }
+                else if (keca2 == true){
+                kel1 = "cisaranten";
+                kel2 = "cingised";   
+                }
+                else {
+                kel1 = " ";
+                kel2 = " ";  
+                }
+               
+            }
+                
+                
+            else if (kabubandung == true){
+                kec1 = "cileunyi";
+                kec2 = "bojongsoang";
+
+                if(keca1 == true){
+                kel1 = "cibiru hilir";
+                kel2 = "cimekar";
+                }
+                else if (keca2 == true){
+                kel1 = "buahbatu";
+                kel2 = "cipagalo";
+                }
+                else {
+                kel1 = " ";
+                kel2 = " ";  
+                }
+               
+            }
+            else {
+                kec1 = " ";
+                kec2 = " ";
+            }  
+            
+
+           
+
+            
+
+            document.getElementById("keca1").innerHTML = kec1;
+            document.getElementById("keca2").innerHTML = kec2;
+
+            document.getElementById("kelurahan1").innerHTML = kel1;
+            document.getElementById("kelurahan2").innerHTML = kel2;
+            }
+
+            
+        </script>
+
+
+           
+        <!--========================================================================= -->
+
+
+        <tr>
+            <Th class="satu">Kecamatan</Th>
+            <Th class="beda"> :</Th>
+            <Th> <select name="kecamatan" id="kecamatan" onchange="pilihkotakab()">
+               
+                <option  id="keca1"></option>
+                <option  id="keca2"></option>
+
+              </select></Th>    
+        </tr>
+        <!--================================================================================= -->
+
+        <tr>
+            <Th class="satu">Desa/Kelurahan</Th>
+            <Th class="beda"> :</Th>
+            <Th> <select name="kelurahan" id="kelurahan" >
+                
+                <option  id="kelurahan1">        </option>
+                <option  id="kelurahan2">        </option>
+
+              </select></Th>    
+        </tr>
+
+      
+            
+   
+            
+        
+
+       
+        
+    </table>
+     
+    </body>
+    </html>
+</body>
+</html>
